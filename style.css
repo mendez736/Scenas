@@ -1,0 +1,112 @@
+		<style>
+
+		/*Mudar background color dos botoes>*/
+
+			button.like {
+				background-color: green;	
+			}
+
+			button.dislike {
+				background-color: red;
+			}
+
+			h3{
+				color:#b71414;
+			}
+
+
+
+		/*alinhamento das colunas*/
+
+			.divalignleft {
+				float:left;
+				width:33%;
+			}
+
+
+			@media(max-width:700px){
+
+				.divalignleft {
+					width: 100%;
+				}				
+
+			}
+
+
+
+			/*alinhamento do texto dentro das colunas>*/
+
+				
+			.alignleft {
+				text-align:left;
+			}
+
+			.aligncenter {
+				text-align:center;
+			}
+
+			.alignright {
+				text-align:right;
+			}
+
+			.imgsize {
+				width: 50%;
+			}
+
+			.linkalign {
+
+				float: left;
+				width: 50%;
+			}
+
+			.descalign {
+
+				text-align: center;
+			}
+
+			body { 
+
+				background: lightgrey; 
+
+			}
+
+			.bgcolor {
+
+				background: grey;
+
+			}
+
+			.txtcolor {
+
+				color: yellow;
+			}
+
+			.book{
+				display:none;
+			}
+			.book.show{
+
+				display: block;
+			}
+
+			.hide {
+				display: none;
+			}
+
+			.show {
+
+				display: block;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
