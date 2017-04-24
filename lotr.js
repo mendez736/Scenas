@@ -150,7 +150,9 @@ function Bookshelf() {
 
 	this.load = function(url) {
 
-		//var url = "https://www.googleapis.com/books/v1/volumes?q=harry+potter";
+		this.shelf = new Queue();
+
+		var url = "https://www.googleapis.com/books/v1/volumes?q=" + url;
 		var parse = this
 
 		$.get(url)
@@ -185,7 +187,7 @@ function Bookshelf() {
 			console.log(data);
 			var title = data.items[i].volumeInfo.title;
 			var desc = data.items[i].volumeInfo.description;
-			var img = data.items[i].volumeInfo.imageLinks.thumbnail;
+			var img = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 			//var isbn = data.items[i].volumeInfo.industryIdentifiers[0].identifier;	
 			var link = data.items[i].volumeInfo.canonicalVolumeLink;
 			var bookN = new Book(title, desc, img, link, "isbn");
@@ -206,15 +208,17 @@ var bs = new Bookshelf();   // Criacao de variavel para adicionar conteudo ao ar
 
 
 		
-var value = $("#search").val();
 
-$("#search").click(function(event) {
 
-	bs.load("https://www.googleapis.com/books/v1/volumes?q=" + value);
+$("#search").off('click');
+$("#search").click(function() {
+
+	var value = $("#look").val();
+	bs.load(value);
 
 });
 
-bs.load("https://www.googleapis.com/books/v1/volumes?q=harry+potter");
+bs.load("Harry Potter");
 
 
 
